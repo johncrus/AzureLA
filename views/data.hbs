@@ -1,0 +1,8 @@
+<h2>{{title}}</h2>
+{{#each dataArray}}
+    <form action="/details" method="post">
+        Comment: <input type="text" name="object" style="width: 100%;" value='{{this}}'><br>
+        <input type="submit" value="Details">
+    </form>
+
+{{/each}}
