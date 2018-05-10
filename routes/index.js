@@ -70,6 +70,7 @@ function spellCheck(res,parameter){
 }
 function keyWords(res,parameter){
     console.log("keywords");
+    console.log(parameter);
     let accessKey = 'd9586edd1f974fb9b37ae22add5a0f23';
 
     let uri = 'westcentralus.api.cognitive.microsoft.com';
@@ -87,12 +88,16 @@ function keyWords(res,parameter){
 
             for (let i in data){
                 var data1=data[i]["keyPhrases"];
-                let result="";
+                let result=null;
                 for (let x in data1 )
                 {
                     result+=data1[x]+" ";
                 }
-                web_search(res,result);
+                console.log(result+"result");
+                if(result!==null)
+                    web_search(res,result);
+                else
+                    web_search(res,parameter);
             }
 
         });
@@ -127,6 +132,7 @@ function keyWords(res,parameter){
 let a=[];
 function web_search(res, param){
     console.log("web_search");
+    console.log(param);
     while(a.length > 0) {
         a.pop();
     }
@@ -248,6 +254,7 @@ router.post('/data', function(req, res, next) {
     while(arr.length > 0) {
         arr.pop();
     }
+    console.log(req.body.name);
     spellCheck(res,req.body.name);
 
 });
