@@ -18,6 +18,8 @@
     "morgan": "~1.9.0",
     "request": "^2.83.0",
     "serve-favicon": "~2.4.5",
-    "tedious": "^2.3.1"
+    "tedious": "^2.3.1",
+    "ms-rest-azure": "^2.5.5",
+    "azure-arm-search":"^1.1.0-preview"
   }
 }
